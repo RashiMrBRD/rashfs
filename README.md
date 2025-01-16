@@ -35,12 +35,12 @@ An interactive script for managing AutoFS (Automatic File System) mounts on Linu
 
 2. Make the script executable:
    ```bash
-   chmod +x autofs.sh
+   chmod +x setup.sh
    ```
 
 3. Run the installation:
    ```bash
-   ./autofs.sh install
+   ./setup.sh install
    ```
 
 ## 💻 Usage
@@ -48,22 +48,22 @@ An interactive script for managing AutoFS (Automatic File System) mounts on Linu
 The script supports various commands for different operations:
 
 ```bash
-# Install AutoFS (default action)
-./autofs.sh
+# Install RashFS (default action)
+./setup.sh
 # or
-./autofs.sh install
+./setup.sh install
 
 # View helpful tips and troubleshooting guide
-./autofs.sh tips
+./setup.sh tips
 
-# Check AutoFS status
-./autofs.sh status
+# Check RashFS status
+./setup.sh status
 
-# Uninstall AutoFS
-./autofs.sh uninstall
+# Uninstall RashFS
+./setup.sh uninstall
 
 # Show help
-./autofs.sh -h
+./setup.sh -h
 ```
 
 ## 🔧 Configuration
@@ -102,9 +102,9 @@ backup  -ro,soft     backup-server:/backup
 ## 🔍 Monitoring and Troubleshooting
 
 ### Check Status
-Monitor your AutoFS setup:
+Monitor your RashFS setup:
 ```bash
-./autofs.sh status
+./setup.sh status
 ```
 
 ### View Active Mounts
@@ -116,7 +116,7 @@ mount | grep autofs
 
 1. **Mount not working?**
    ```bash
-   # Check AutoFS service
+   # Check RashFS service
    systemctl status autofs
    
    # View logs
@@ -153,7 +153,7 @@ Modify timeout settings in `/etc/auto.master`:
 ### Backup
 The uninstall command automatically creates backups:
 ```bash
-./autofs.sh uninstall
+./setup.sh uninstall
 # Backup stored in /etc/autofs_backup_<timestamp>
 ```
 
@@ -169,8 +169,8 @@ sudo cp /etc/autofs_backup_<timestamp>/auto.nfs /etc/auto.nfs
 
 | Status | Description |
 |--------|-------------|
-| ✅ Running | AutoFS service is active and running |
-| ❌ Stopped | AutoFS service is stopped |
+| ✅ Running | RashFS service is active and running |
+| ❌ Stopped | RashFS service is stopped |
 | ⚠️ Error | Configuration or mount error |
 
 ## 🤝 Contributing
@@ -194,7 +194,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 ## 📞 Support
 
 For support:
-1. Check the built-in tips: `./autofs.sh tips`
+1. Check the built-in tips: `./setup.sh tips`
 2. Review the troubleshooting section above
 3. Open an issue in the repository
 
